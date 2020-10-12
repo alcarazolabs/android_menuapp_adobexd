@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--android:scaleType="centerCrop"
+     https://stackoverflow.com/questions/64231318/impossible-put-at-the-top-one-image-using-a-constraintlayout-in-android
+     -->
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_header" />
+
+
+    <TextView
+        android:id="@+id/menu_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sf_pro_display_heavy"
+        android:text="Menu"
+        android:textColor="@color/negro"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
+    <ImageView
+        android:id="@+id/navegacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/menu_titulo"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menu_titulo"
+        app:srcCompat="@drawable/ic_navigation" />
+
+    <ImageView
+        android:id="@+id/notificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toEndOf="@+id/menu_titulo"
+        app:layout_constraintTop_toTopOf="@+id/menu_titulo"
+        app:srcCompat="@drawable/ic_notification" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ceviche_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/boton_blanco"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Ceviche"
+                android:textAllCaps="false"
+                android:textColor="@color/negro" />
+
+            <Button
+                android:id="@+id/chaufa_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/boton_negro"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Chaufa"
+                android:textAllCaps="false"
+                android:textColor="@color/blanco" />
+
+            <Button
+                android:id="@+id/pariguela_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/boton_blanco"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Pariguela"
+                android:textAllCaps="false"
+                android:textColor="@color/negro" />
+
+            <Button
+                android:id="@+id/sopa_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/boton_blanco"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Sopa"
+                android:textAllCaps="false"
+                android:textColor="@color/negro" />
+
+            <Button
+                android:id="@+id/miga_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/boton_blanco"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="Miga de Pavo"
+                android:textAllCaps="false"
+                android:textColor="@color/negro" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--  android:fillViewport="true"
+             android:layout_weight="1"
+     -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.cardview.widget.CardView
+
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:id="@+id/cardView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/blanco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.345"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/chaufa_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arroz_chaufa" />
+
+                    <TextView
+                        android:id="@+id/chaufa_plato_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:text="Arroz Chaufa"
+                        android:textColor="@color/negro"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.436"
+                        app:layout_constraintStart_toEndOf="@+id/chaufa_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/chaufa_plato_precio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="S/.7.00"
+                        android:textColor="@color/negro"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.413"
+                        app:layout_constraintStart_toEndOf="@+id/chaufa_image"
+                        app:layout_constraintTop_toBottomOf="@+id/chaufa_plato_titulo" />
+
+                    <Button
+                        android:id="@+id/chaufa_plato_agregar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/boton_agregar"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Agregar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.441"
+                        app:layout_constraintStart_toEndOf="@+id/chaufa_image"
+                        app:layout_constraintTop_toBottomOf="@+id/chaufa_plato_precio" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/blanco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.345"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ceviche_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ceviche" />
+
+                    <TextView
+                        android:id="@+id/ceviche_plato_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:text="Ceviche"
+                        android:textColor="@color/negro"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.436"
+                        app:layout_constraintStart_toEndOf="@+id/ceviche_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ceviche_plato_precio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="S/.10.00"
+                        android:textColor="@color/negro"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.413"
+                        app:layout_constraintStart_toEndOf="@+id/ceviche_image"
+                        app:layout_constraintTop_toBottomOf="@+id/ceviche_plato_titulo" />
+
+                    <Button
+                        android:id="@+id/ceviche_plato_agregar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/boton_agregar"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Agregar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.441"
+                        app:layout_constraintStart_toEndOf="@+id/ceviche_image"
+                        app:layout_constraintTop_toBottomOf="@+id/ceviche_plato_precio" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/blanco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.345"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/arros_pollo_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arroz_pollo" />
+
+                    <TextView
+                        android:id="@+id/arros_pollo_plato_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sf_pro_display_light"
+                        android:text="Arroz con Pollo"
+                        android:textColor="@color/negro"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.436"
+                        app:layout_constraintStart_toEndOf="@+id/arros_pollo_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/arros_pollo_plato_precio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="S/.8.00"
+                        android:textColor="@color/negro"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.413"
+                        app:layout_constraintStart_toEndOf="@+id/arros_pollo_image"
+                        app:layout_constraintTop_toBottomOf="@+id/arros_pollo_plato_titulo" />
+
+                    <Button
+                        android:id="@+id/arros_pollo_plato_agregar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/boton_agregar"
+                        android:fontFamily="@font/sf_pro_display_bold"
+                        android:text="Agregar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blanco"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.441"
+                        app:layout_constraintStart_toEndOf="@+id/arros_pollo_image"
+                        app:layout_constraintTop_toBottomOf="@+id/arros_pollo_plato_precio" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
